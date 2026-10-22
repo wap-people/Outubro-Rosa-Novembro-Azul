@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Saúde não tem mês · Outubro Rosa + Novembro Azul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fundo:#FFFCFB; --fundo2:#F7F3F2; --tinta:#1F1A22; --suave:#645D68; --linha:#ECE5E4; --cartao:#FFFFFF;
+  --rosa:#C8325A; --rosa-bg:#FDF0F3; --azul:#1E5AA8; --azul-bg:#EEF4FC; --sobre:#FFFFFF;
+  --verde:#1E7A4C; --verde-bg:#E7F5EC; --verm:#B3261E; --verm-bg:#FCECEA;
+  --sombra:0 1px 2px rgba(40,20,30,.04),0 8px 24px rgba(40,20,30,.05);
+  color-scheme:light; box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --fundo:#141216; --fundo2:#1A181D; --tinta:#F3F0F4; --suave:#ADA6B2; --linha:#2D2930; --cartao:#1E1B21;
+    --rosa:#F08AA6; --rosa-bg:#2A1820; --azul:#86B5F2; --azul-bg:#16202D; --sobre:#141216;
+    --verde:#7FD3A4; --verde-bg:#132A1E; --verm:#F2A39C; --verm-bg:#2E1715; --sombra:none; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --fundo:#141216; --fundo2:#1A181D; --tinta:#F3F0F4; --suave:#ADA6B2; --linha:#2D2930; --cartao:#1E1B21;
+  --rosa:#F08AA6; --rosa-bg:#2A1820; --azul:#86B5F2; --azul-bg:#16202D; --sobre:#141216;
+  --verde:#7FD3A4; --verde-bg:#132A1E; --verm:#F2A39C; --verm-bg:#2E1715; --sombra:none; color-scheme:dark;
+}
+[data-c="rosa"]{--acc:var(--rosa);--acc-bg:var(--rosa-bg)}
+[data-c="azul"]{--acc:var(--azul);--acc-bg:var(--azul-bg)}
+*,*::before,*::after{box-sizing:inherit}
+[hidden]{display:none!important}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 5rem);scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--fundo);color:var(--tinta);font-family:Figtree,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:1.0625rem;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--fundo)}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em;font-weight:800}
+h2{font-size:clamp(1.8rem,4vw,2.5rem)}
+h3{font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--tinta);outline-offset:3px;border-radius:8px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+section{padding:clamp(3.5rem,8vw,5.5rem) 0}
+.alt{background:var(--fundo2)}
+.eyebrow{display:block;font-weight:600;font-size:.95rem;color:var(--suave);margin-bottom:.6rem}
+.intro{max-width:42rem;color:var(--suave);margin-top:.9rem;font-size:1.1rem}
+sup a{font-size:.72em;font-weight:700;text-decoration:none;color:var(--suave);padding:0 .1em}
+sup a:hover{color:var(--tinta);text-decoration:underline}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;
+  padding:.8rem 1.4rem;border-radius:999px;border:2px solid var(--tinta);background:var(--tinta);color:var(--fundo);transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.sec{background:transparent;color:var(--tinta)}
+.btn.peq{padding:.5rem 1rem;font-size:.95rem}
+
+/* topo */
+.topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--fundo);border-bottom:1px solid var(--linha)}
+.topo .wrap{display:flex;align-items:center;gap:1.5rem;height:4.25rem}
+.marca{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;text-decoration:none;display:flex;gap:.6rem;align-items:center;white-space:nowrap}
+.marca i{width:1px;height:1.2rem;background:var(--tinta);display:block}
+.marca small{font-weight:600;font-size:.7rem}
+.menu{display:flex;gap:1.3rem;margin-left:auto}
+.menu a{text-decoration:none;color:var(--suave);font-weight:600;font-size:.95rem}
+.menu a:hover{color:var(--tinta)}
+@media (max-width:62rem){.menu{display:none}.topo .btn{margin-left:auto}}
+
+/* hero */
+.hero{padding-top:clamp(3rem,8vw,5.5rem)}
+.hero h1{font-size:clamp(3.2rem,10vw,6.5rem);max-width:10ch}
+.hero h1 .r{color:var(--rosa)} .hero h1 .a{color:var(--azul)}
+.hero .lead{max-width:38rem;font-size:1.2rem;color:var(--suave);margin-top:1.4rem}
+.hero .lead b{color:var(--tinta)}
+.hero .acoes{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem}
+.duo .tag{display:flex;align-items:center;gap:.9rem;padding:1.1rem 1.3rem;border-radius:20px;background:var(--acc-bg)}
+.duo .tag b{display:block;color:var(--acc)}
+.duo .tag span{color:var(--suave);font-size:.95rem}
+.laco{flex:none;width:2.2rem;height:2.6rem}
+@media (max-width:40rem){.duo{grid-template-columns:1fr}}
+
+/* vídeos */
+.videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1.25rem;margin-top:2rem}
+.video{display:flex;flex-direction:column;text-decoration:none;border-radius:24px;overflow:hidden;background:var(--cartao);box-shadow:var(--sombra);border:1px solid var(--linha);transition:transform .15s}
+.video:hover{transform:translateY(-2px)}
+.video .tela{aspect-ratio:16/9;background:var(--acc);display:grid;place-items:center;position:relative}
+.video .tela::after{content:attr(data-mes);position:absolute;left:1.2rem;bottom:1rem;color:var(--sobre);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.6rem}
+.play{width:4rem;height:4rem;border-radius:50%;background:var(--sobre);display:grid;place-items:center}
+.play svg{width:1.4rem;height:1.4rem;fill:var(--acc);margin-left:.2rem}
+.video .info{padding:1rem 1.3rem 1.2rem}
+.video .info b{display:block}
+.video .info span{color:var(--suave);font-size:.93rem}
+
+/* por que cedo */
+.cedo{display:grid;grid-template-columns:1fr 1.3fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+@media (max-width:52rem){.cedo{grid-template-columns:1fr}}
+.cedo .breve{background:var(--fundo2);border-radius:24px;padding:1.6rem 1.7rem}
+.cedo .breve p{color:var(--suave);margin-top:.7rem}
+.cedo .breve p b{color:var(--tinta)}
+.motivos{list-style:none;padding:0;margin:1.6rem 0 0;display:grid;gap:.9rem}
+.motivos li{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem 1.2rem;border-radius:18px;background:var(--cartao);border:1px solid var(--linha);box-shadow:var(--sombra)}
+.motivos .n{flex:none;width:2.2rem;height:2.2rem;border-radius:50%;display:grid;place-items:center;font-weight:800;background:var(--fundo2)}
+
+/* painéis por doença */
+.par{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.2rem}
+@media (max-width:50rem){.par{grid-template-columns:1fr}}
+.painel{border-radius:26px;padding:clamp(1.4rem,3.5vw,2rem);background:var(--acc-bg)}
+.painel .cab{display:flex;align-items:center;gap:.8rem;margin-bottom:1.2rem}
+.painel .cab .laco{width:1.8rem;height:2.2rem}
+.painel .cab h3{color:var(--acc);font-size:1.45rem}
+.painel .cab small{display:block;color:var(--suave);font-size:.9rem;font-weight:600;font-family:Figtree,sans-serif;letter-spacing:0}
+.painel .def{color:var(--suave);margin-bottom:1.2rem}
+.numeros{display:grid;gap:.7rem}
+.numero{background:var(--cartao);border-radius:18px;padding:1rem 1.2rem;display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.numero .v{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(1.8rem,4vw,2.3rem);color:var(--acc);line-height:1;letter-spacing:-.02em;min-width:7.5rem}
+.numero p{flex:1;min-width:12rem;color:var(--tinta);font-size:.98rem}
+.cartao-b{background:var(--cartao);border-radius:24px;padding:clamp(1.4rem,3.5vw,1.9rem);border:1px solid var(--linha);box-shadow:var(--sombra)}
+.cartao-b .cab{display:flex;align-items:center;gap:.7rem;margin-bottom:.4rem}
+.cartao-b .cab h3{color:var(--acc)}
+.cartao-b .cab .laco{width:1.6rem;height:2rem}
+.subt{font-weight:700;font-size:.95rem;margin-top:1.3rem;color:var(--tinta)}
+.lista{list-style:none;padding:0;margin:.5rem 0 0}
+.lista li{display:flex;gap:.8rem;padding:.6rem 0;border-top:1px solid var(--linha)}
+.lista li:first-child{border-top:0}
+.lista li::before{content:"";flex:none;width:.5rem;height:.5rem;border-radius:50%;background:var(--acc);margin-top:.7rem}
+.obs{margin-top:1rem;font-size:.92rem;color:var(--suave);background:var(--acc-bg);padding:.8rem 1rem;border-radius:14px}
+
+/* sinais */
+.sinal-painel{border-radius:28px;background:var(--acc-bg);padding:clamp(1.3rem,3.5vw,1.9rem);display:flex;flex-direction:column;gap:.9rem}
+.sp-cab{display:flex;align-items:center;gap:.8rem}
+.sp-cab .laco{width:1.8rem;height:2.2rem}
+.sp-cab h3{color:var(--acc);font-size:1.45rem}
+.sp-cab small{display:block;color:var(--suave);font-size:.9rem;font-weight:600;font-family:Figtree,sans-serif;letter-spacing:0}
+.sp-destaque{background:var(--acc);color:var(--sobre);border-radius:22px;padding:1.2rem 1.3rem;display:flex;gap:1rem;align-items:center}
+.sp-destaque .ic{flex:none;width:3.4rem;height:3.4rem;border-radius:50%;background:color-mix(in srgb,var(--sobre) 18%,transparent);display:grid;place-items:center}
+.sp-destaque .ic svg{width:1.7rem;height:1.7rem;stroke:var(--sobre);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sp-destaque small{display:block;font-weight:700;font-size:.82rem;opacity:.85;margin-bottom:.15rem}
+.sp-destaque b{display:block;font-size:1.08rem;line-height:1.35}
+.sp-destaque sup a{color:var(--sobre);opacity:.8}
+.sp-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.sp-grid li{background:var(--cartao);border-radius:18px;padding:1rem;display:flex;flex-direction:column;gap:.65rem;font-size:.96rem;line-height:1.4}
+.sp-grid .ic{width:2.5rem;height:2.5rem;border-radius:50%;background:var(--acc-bg);display:grid;place-items:center}
+.sp-grid .ic svg{width:1.3rem;height:1.3rem;stroke:var(--acc);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:26rem){.sp-grid{grid-template-columns:1fr}}
+.sp-risco{background:var(--cartao);border-radius:18px;padding:1rem 1.1rem}
+.sp-risco p{font-weight:700;font-size:.95rem}
+.chips{list-style:none;padding:0;margin:.6rem 0 0;display:flex;flex-wrap:wrap;gap:.45rem}
+.chips li{background:var(--acc-bg);border-radius:999px;padding:.35rem .85rem;font-size:.9rem;line-height:1.4}
+.sp-nota{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem;color:var(--suave);padding:0 .2rem}
+.sp-nota svg{flex:none;width:1.1rem;height:1.1rem;margin-top:.2rem;stroke:var(--acc);fill:none;stroke-width:2;stroke-linecap:round}
+
+/* prevenção */
+.habitos{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.2rem}
+@media (max-width:56rem){.habitos{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:30rem){.habitos{grid-template-columns:1fr}}
+.habito{padding:1.3rem;border-radius:20px;background:var(--cartao);border:1px solid var(--linha);box-shadow:var(--sombra)}
+.habito .ic{width:3rem;height:3rem;border-radius:50%;background:var(--fundo2);display:grid;place-items:center}
+.habito .ic svg{width:1.5rem;height:1.5rem;stroke:var(--tinta);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.habito b{display:block;margin-top:.8rem}
+.habito span{color:var(--suave);font-size:.95rem}
+.cuidar{list-style:none;padding:0;margin:.8rem 0 0;display:grid;gap:.7rem}
+.cuidar li{display:flex;gap:1rem;align-items:flex-start;padding:1.1rem 1.2rem;border-radius:18px;background:var(--acc-bg);border-left:4px solid var(--acc)}
+.cuidar .ic{flex:none;width:2.8rem;height:2.8rem;border-radius:50%;background:var(--cartao);display:grid;place-items:center}
+.cuidar .ic svg{width:1.4rem;height:1.4rem;stroke:var(--acc);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cuidar b{display:block}
+.cuidar span{color:var(--suave);font-size:.97rem}
+
+/* mito ou verdade */
+.quiz{max-width:40rem;margin:2.2rem auto 0}
+.quiz-topo{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:.8rem;flex-wrap:wrap}
+.filtros{display:flex;gap:.4rem;flex-wrap:wrap}
+.filtros button{font:inherit;font-weight:600;font-size:.9rem;padding:.4rem .95rem;border-radius:999px;border:1px solid var(--linha);background:var(--cartao);color:var(--suave);cursor:pointer}
+.filtros button[aria-pressed="true"]{background:var(--tinta);border-color:var(--tinta);color:var(--fundo)}
+.placar{font-weight:600;color:var(--suave);font-size:.95rem}
+.barra{height:5px;background:var(--linha);border-radius:99px;overflow:hidden;margin-bottom:1rem}
+.barra i{display:block;height:100%;width:0;background:var(--tinta);transition:width .3s}
+.cartao{border-radius:26px;background:var(--cartao);border:1px solid var(--linha);box-shadow:var(--sombra);padding:clamp(1.5rem,4vw,2.3rem);min-height:17rem;display:flex;flex-direction:column}
+.doenca{display:inline-block;align-self:flex-start;font-weight:700;font-size:.85rem;color:var(--acc);background:var(--acc-bg);padding:.3rem .8rem;border-radius:999px;margin-bottom:1rem}
+.afirm{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(1.35rem,3.5vw,1.8rem);line-height:1.2;letter-spacing:-.01em}
+.escolha{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:auto;padding-top:1.6rem}
+.escolha button{font:inherit;font-weight:700;font-size:1.05rem;padding:.9rem;border-radius:16px;cursor:pointer;border:2px solid var(--linha);background:var(--fundo2);color:var(--tinta)}
+.escolha button:hover{border-color:var(--tinta)}
+.resultado{margin-top:1.4rem;padding:1rem 1.1rem;border-radius:16px}
+.resultado.ok{background:var(--verde-bg)} .resultado.erro{background:var(--verm-bg)}
+.resultado .veredito{font-weight:800;display:block;margin-bottom:.3rem}
+.resultado.ok .veredito{color:var(--verde)} .resultado.erro .veredito{color:var(--verm)}
+.resultado .fonte{display:block;margin-top:.5rem;font-size:.88rem;color:var(--suave)}
+.nav-quiz{display:flex;justify-content:space-between;gap:.8rem;margin-top:1rem}
+.fim{text-align:center;justify-content:center}
+.fim .v{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:3.5rem}
+
+/* cta */
+.cta{background:var(--fundo2);color:var(--tinta);border:1px solid var(--linha);border-radius:24px;padding:clamp(1.4rem,4vw,2rem) clamp(1.4rem,4vw,2.2rem);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem}
+.cta h2{color:var(--tinta);font-size:clamp(1.25rem,2.6vw,1.6rem);max-width:28ch}
+.cta p{color:var(--suave);margin-top:.3rem;max-width:34rem;font-size:1rem}
+.cta .btn{padding:.6rem 1.2rem;font-size:.95rem}
+
+/* fontes */
+.saiba{margin-top:1.6rem}
+.saiba summary{list-style:none;display:inline-flex}
+.saiba summary::-webkit-details-marker{display:none}
+.saiba summary::after{content:"";width:.5rem;height:.5rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:-.2rem 0 0 .3rem;transition:transform .2s}
+.saiba[open] summary::after{transform:rotate(-135deg);margin-top:.2rem}
+.saiba ol{margin-top:1.2rem!important}
+.fontes ol{margin:2rem 0 0;padding-left:1.4rem;max-width:52rem}
+.fontes li{padding:.5rem 0;color:var(--suave);font-size:.96rem}
+.fontes li b{color:var(--tinta);font-weight:600}
+.fontes li a{color:var(--azul);font-weight:600;text-decoration:underline;text-underline-offset:3px;word-break:break-word;cursor:pointer}
+.fontes li a::after{content:" ↗";text-decoration:none;display:inline-block;margin-left:.15em}
+.fontes li a:hover{color:var(--rosa)}
+.fontes .nota{margin-top:1.5rem;max-width:52rem;color:var(--suave);font-size:.93rem}
+
+footer{border-top:1px solid var(--linha);padding:2.5rem 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;color:var(--suave);font-size:.93rem}
+footer .lema{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.4rem;color:var(--tinta)}
+footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
+
+/* aba de planos */
+#planos{min-height:calc(100vh - 4.25rem);padding:clamp(3rem,8vw,5rem) 0}
+.voltar{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-weight:600;color:var(--suave);background:none;border:0;cursor:pointer;padding:0;margin-bottom:2rem}
+.voltar:hover{color:var(--tinta)}
+.regioes{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;margin-top:2.5rem;max-width:52rem}
+.regiao{display:flex;justify-content:space-between;align-items:center;gap:1rem;text-decoration:none;padding:1.4rem 1.5rem;border-radius:22px;border:1px solid var(--linha);background:var(--cartao);box-shadow:var(--sombra);transition:border-color .15s,transform .15s}
+.regiao:hover{border-color:var(--tinta);transform:translateY(-2px)}
+.regiao b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.35rem;font-weight:800;display:block}
+.regiao span{color:var(--suave);font-size:.9rem}
+.regiao svg{flex:none;width:1.4rem;height:1.4rem;stroke:var(--tinta);fill:none;stroke-width:2}
+.regiao[aria-disabled="true"]{opacity:.6;cursor:not-allowed}
+.regiao[aria-disabled="true"]:hover{transform:none;border-color:var(--linha)}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="laco" viewBox="0 0 40 48"><path d="M20 4c-6 0-9.5 4.5-9.5 9.5 0 6.2 5.3 12 9.5 17.3 4.2-5.3 9.5-11.1 9.5-17.3C29.5 8.5 26 4 20 4zm0 5.5c2.5 0 4.1 1.9 4.1 4.1 0 2.7-2 5.6-4.1 8.3-2.1-2.7-4.1-5.6-4.1-8.3 0-2.2 1.6-4.1 4.1-4.1z" fill="currentColor"/><path d="M17 29 8 46l7-1.6 3.6 5.2L27 31z" fill="currentColor" opacity=".75"/><path d="M23 29l9 17-7-1.6-3.6 5.2L13 31z" fill="currentColor"/></symbol>
+</svg>
+
+<header class="topo">
+  <div class="wrap">
+    <a class="marca" href="#" data-ir="inicio" aria-label="Wap e WAAW by Alok, início">Wap<i></i>WAAW <small>by Alok</small></a>
+    <nav class="menu" aria-label="Seções">
+      <a href="#por-que-cedo">Por que cedo</a>
+      <a href="#numeros">Números</a>
+      <a href="#sinais">Sinais</a>
+      <a href="#prevencao">Prevenção</a>
+      <a href="#mito-ou-verdade">Mito ou verdade</a>
+    </nav>
+    <a class="btn peq" href="#planos" data-ir="planos">Conheça nossos planos</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+<section class="hero">
+  <div class="wrap">
+    <h1><span class="r">Saúde não</span> <span class="a">tem mês.</span></h1>
+    <p class="lead"><b>Prevenir é o melhor remédio.</b> Câncer de mama e câncer de próstata têm mais chance de tratamento bem-sucedido quando descobertos cedo. Aqui você entende cada um, com calma e com fontes oficiais.</p>
+    <div class="acoes">
+      <a class="btn" href="#por-que-cedo">Começar a leitura</a>
+    </div>
+    <div class="duo">
+      <div class="tag" data-c="rosa"><div><b>Outubro Rosa</b><span>Câncer de mama</span></div></div>
+      <div class="tag" data-c="azul"><div><b>Novembro Azul</b><span>Câncer de próstata e saúde do homem</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="videos">
+  <div class="wrap">
+    <h2>Assista aos vídeos</h2>
+    <p class="intro">Dois conteúdos curtos para assistir antes de seguir a leitura. Os vídeos abrem no YouTube.</p>
+    <div class="videos">
+      <a class="video" data-c="rosa" href="https://www.youtube.com/watch?v=BKdvJdWagxQ&t=7s" target="_blank" rel="noopener">
+        <div class="tela" data-mes="Outubro Rosa"><div class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></div></div>
+        <div class="info"><b>Treinamento Outubro Rosa</b><span>Conscientização sobre o câncer de mama · YouTube</span></div>
+      </a>
+      <a class="video" data-c="azul" href="https://www.youtube.com/watch?v=BhMrI5EZ590" target="_blank" rel="noopener">
+        <div class="tela" data-mes="Novembro Azul"><div class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></div></div>
+        <div class="info"><b>Vídeo Novembro Azul</b><span>Saúde do homem e câncer de próstata · YouTube</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="por-que-cedo">
+  <div class="wrap cedo">
+    <div class="breve">
+      <span class="eyebrow">De onde vêm as campanhas</span>
+      <p>O <b>Outubro Rosa</b> nasceu nos Estados Unidos, nos anos 1990, e chegou ao Brasil em 2002.</p>
+      <p>O <b>Novembro Azul</b> surgiu na Austrália, em 2003, inspirado no Outubro Rosa.</p>
+      <p>As duas têm o mesmo objetivo: fazer as pessoas procurarem ajuda antes que a doença avance.</p>
+    </div>
+    <div>
+      <h2>Por que descobrir cedo faz toda a diferença</h2>
+      <ol class="motivos">
+        <li><span class="n">1</span><p>No câncer de mama, o prognóstico é <b>mais favorável quando a doença é diagnosticada e tratada cedo</b>.</p></li>
+        <li><span class="n">2</span><p>Tumores de mama descobertos no início podem ser tratados com <b>cirurgias que preservam a mama</b>.</p></li>
+        <li><span class="n">3</span><p>No câncer de próstata, tratar na fase inicial pode <b>evitar que a doença chegue a uma fase avançada</b>.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="numeros">
+  <div class="wrap">
+    <h2>O tamanho de cada doença</h2>
+    <p class="intro">Excluindo o câncer de pele não melanoma, são os tipos de câncer mais comuns entre mulheres e entre homens no país.</p>
+    <div class="par">
+      <div class="painel" data-c="rosa">
+        <div class="cab"><h3>Câncer de mama <small>Outubro Rosa</small></h3></div>
+        <p class="def">Multiplicação desordenada de células anormais da mama, que forma um tumor capaz de invadir outros tecidos. É o câncer mais comum entre as mulheres.</p>
+        <div class="numeros">
+          <div class="numero"><span class="v">78.610</span><p>novos casos por ano, de 2026 a 2028</p></div>
+          <div class="numero"><span class="v">30%</span><p>de todos os diagnósticos de câncer em mulheres</p></div>
+          <div class="numero"><span class="v">20.993</span><p>mortes em 2024 (dado preliminar); é a primeira causa de morte por câncer em mulheres</p></div>
+        </div>
+      </div>
+      <div class="painel" data-c="azul">
+        <div class="cab"><h3>Câncer de próstata <small>Novembro Azul</small></h3></div>
+        <p class="def">A próstata é uma glândula logo abaixo da bexiga. Na maioria dos casos, o câncer cresce devagar; em outros, pode avançar rápido.</p>
+        <div class="numeros">
+          <div class="numero"><span class="v">77.920</span><p>novos casos por ano, de 2026 a 2028</p></div>
+          <div class="numero"><span class="v">30%</span><p>de todos os diagnósticos de câncer em homens</p></div>
+          <div class="numero"><span class="v">+17 mil</span><p>mortes em 2023, uma média de 47 por dia</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sinais">
+  <div class="wrap">
+    <h2>Sinais que merecem atenção</h2>
+    <p class="intro">Nenhum destes sinais significa câncer com certeza, mas todos merecem uma consulta o quanto antes.</p>
+    <div class="par">
+      <article class="sinal-painel" data-c="rosa">
+        <div class="sp-cab"><h3>Câncer de mama <small>Outubro Rosa</small></h3></div>
+        <div class="sp-destaque">
+          <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="14" cy="10" r="2.4"/></svg></span>
+          <div><small>O sinal mais comum</small><b>Caroço (nódulo) endurecido e fixo na mama, presente em cerca de 90% dos casos.</b></div>
+        </div>
+        <ul class="sp-grid">
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="9" cy="10" r=".8"/><circle cx="13.5" cy="8.5" r=".8"/><circle cx="15" cy="13" r=".8"/><circle cx="10" cy="14.5" r=".8"/></svg></span>Pele retraída ou com aspecto de casca de laranja</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3"/></svg></span>Mudança no formato do mamilo</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span>Secreção por um dos mamilos, principalmente com sangue</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="2.2"/><circle cx="15.5" cy="7" r="1.6"/><circle cx="14" cy="15" r="2.8"/></svg></span>Ínguas ou caroços na axila</li>
+        </ul>
+        <div class="sp-risco">
+          <p>Quem tem mais risco</p>
+          <ul class="chips">
+            <li>Idade: o risco aumenta a partir dos 40</li>
+            <li>Mãe, irmã ou filha com a doença</li>
+            <li>Obesidade</li>
+            <li>Sedentarismo</li>
+            <li>Consumo de álcool</li>
+          </ul>
+        </div>
+        <p class="sp-nota"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Homens também podem ter câncer de mama, mas é raro: cerca de 1% dos casos.</span></p>
+      </article>
+      <article class="sinal-painel" data-c="azul">
+        <div class="sp-cab"><h3>Câncer de próstata <small>Novembro Azul</small></h3></div>
+        <div class="sp-destaque">
+          <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7c2 0 3.7.6 5.2 1.5M22 12s-3.5 7-10 7c-2 0-3.7-.6-5.2-1.5"/><path d="M3 3l18 18"/></svg></span>
+          <div><small>Atenção</small><b>No início, pode não dar nenhum sintoma. Por isso a consulta regular importa.</b></div>
+        </div>
+        <ul class="sp-grid">
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>Dificuldade ou demora para começar e terminar de urinar</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M8 11l4 4 4-4M8 20h8"/></svg></span>Jato de urina mais fraco</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg></span>Vontade de urinar mais vezes, de dia ou à noite</li>
+          <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span>Sangue na urina</li>
+        </ul>
+        <div class="sp-risco">
+          <p>Quem tem mais risco</p>
+          <ul class="chips">
+            <li>Mais de 55 anos: 9 em cada 10 casos</li>
+            <li>Pai ou irmão com a doença antes dos 60</li>
+            <li>Sobrepeso e obesidade</li>
+          </ul>
+        </div>
+        <p class="sp-nota"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Os sintomas urinários também aparecem no aumento benigno da próstata, que atinge mais da metade dos homens acima de 50.</span></p>
+      </article>
+    </div>
+    <div class="fontes">
+      <details class="saiba">
+        <summary class="btn sec">Fontes utilizadas</summary>
+        <ol>
+          <li><b>Ministério da Saúde — Câncer de mama</b> (Saúde de A a Z). <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/cancer-de-mama" target="_blank" rel="noopener">gov.br/saude</a></li>
+          <li><b>Correio Braziliense</b> — nódulo presente em 90% dos casos de câncer de mama. <a href="https://www.correiobraziliense.com.br/cidades-df/2021/10/4954214-nodulos-nas-mamas-estao-presentes-em-90-dos-casos-de-cancer-diz-mastologista.html" target="_blank" rel="noopener">correiobraziliense.com.br</a></li>
+          <li><b>Conselho Federal de Nutricionistas</b> — hábitos de prevenção do câncer de mama. <a href="https://cfn.org.br/cfn-defende-a-conscientizacao-sobre-o-cancer-de-mama/" target="_blank" rel="noopener">cfn.org.br</a></li>
+          <li><b>INCA — Câncer de próstata: vamos falar sobre isso?</b> Cartilha oficial do INCA. <a href="https://www.inca.gov.br/en/node/955" target="_blank" rel="noopener">inca.gov.br</a></li>
+        </ol>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="prevencao">
+  <div class="wrap">
+    <h2>Hábitos que protegem os dois</h2>
+    <p class="intro">O INCA recomenda os mesmos cuidados para reduzir o risco do câncer de mama e do câncer de próstata.</p>
+    <div class="habitos">
+      <div class="habito"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M7 20V10m10 10V10M5 10l7-6 7 6"/></svg></span><b>Peso adequado</b><span>Excesso de peso aumenta o risco dos dois.</span></div>
+      <div class="habito"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="14" cy="4.5" r="2"/><path d="M8 21l3-6 3 2v4M7 12l3-3 3 1 2 3h3M10 9l1 6"/></svg></span><b>Atividade física</b><span>Movimentar o corpo com regularidade.</span></div>
+      <div class="habito"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-5 0-8-4-8-8 0-3 2-5 4.5-5 1.5 0 2.5.7 3.5.7S14 8 15.5 8C18 8 20 10 20 13c0 4-3 8-8 8z"/><path d="M12 8.7C12 6 13.5 4 16 3"/></svg></span><b>Alimentação saudável</b><span>Base para reduzir o risco de vários cânceres.</span></div>
+      <div class="habito"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span><b>Sem cigarro e sem álcool</b><span>Evite bebidas alcoólicas e cigarro.</span></div>
+    </div>
+
+    <div class="par">
+      <article class="cartao-b" data-c="rosa">
+        <div class="cab"><h3>Como se cuidar: mama</h3></div>
+        <ul class="cuidar">
+          <li><div><b>Conheça suas mamas</b><span>Olhe, palpe e sinta suas mamas com frequência. Se notar uma alteração que não passa, procure uma Unidade Básica de Saúde.</span></div></li>
+          <li><div><b>Mamografia a cada dois anos</b><span>Recomendada pelo SUS dos 50 aos 74 anos. Dos 40 aos 49, o exame pode ser feito em decisão conjunta com o profissional de saúde.</span></div></li>
+        </ul>
+      </article>
+      <article class="cartao-b" data-c="azul">
+        <div class="cab"><h3>Como se cuidar: próstata</h3></div>
+        <ul class="cuidar">
+          <li><div><b>Com sintomas, procure a unidade de saúde</b><span>Os exames são o toque retal e o PSA (de sangue). Só a biópsia confirma o diagnóstico.</span></div></li>
+          <li><div><b>Sem sintomas, converse com o médico</b><span>Decidam juntos sobre exames de rotina. A Sociedade Brasileira de Urologia orienta essa conversa a partir dos 50 anos, ou dos 45 para homens negros, obesos ou com histórico familiar. O Ministério da Saúde não recomenda o rastreamento de todos os homens.</span></div></li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="mito-ou-verdade">
+  <div class="wrap">
+    <h2>Mito ou verdade?</h2>
+    <p class="intro">Leia a afirmação, escolha sua resposta e veja a explicação com a fonte.</p>
+    <div class="quiz">
+      <div class="quiz-topo">
+        <div class="filtros" role="group" aria-label="Filtrar afirmações">
+          <button data-f="todos" aria-pressed="true">Todas</button>
+          <button data-f="rosa" aria-pressed="false">Câncer de mama</button>
+          <button data-f="azul" aria-pressed="false">Câncer de próstata</button>
+        </div>
+        <span class="placar" id="placar" aria-live="polite"></span>
+      </div>
+      <div class="barra" aria-hidden="true"><i id="progresso"></i></div>
+      <div id="palco"></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2>Cuidar da saúde começa pelo acesso.</h2>
+        <p>Veja os planos disponíveis na sua unidade.</p>
+      </div>
+      <a class="btn" href="#planos" data-ir="planos">Conheça nossos planos</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<section id="planos" hidden aria-labelledby="titulo-planos">
+  <div class="wrap">
+    <button class="voltar" data-ir="inicio"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Voltar para a campanha</button>
+    <span class="eyebrow">Nossos planos</span>
+    <h2 id="titulo-planos" tabindex="-1">Escolha a sua região</h2>
+    <p class="intro">Selecione onde você está para conhecer os planos disponíveis.</p>
+    <div class="regioes" id="regioes"></div>
+  </div>
+</section>
+
+
+<script>
+/* =========================================================
+   LINKS DOS PLANOS — cole cada link entre as aspas.
+   Enquanto estiver vazio, o botão aparece como “Link em breve”.
+   ========================================================= */
+const PLANOS = [
+  { nome: "Espírito Santo", link: "" },
+  { nome: "Ceará",          link: "" },
+  { nome: "Paraná WAP",     link: "" },
+  { nome: "Paraná Freso",   link: "" }
+];
+
+/* Mito ou verdade: [afirmação, é verdade?, explicação, nº da fonte, doença] */
+const CARTOES = [
+  ["Só mulheres podem ter câncer de mama.", false, "Homens também podem ter, mas é raro: cerca de 1% dos casos.", 2, "rosa"],
+  ["O caroço (nódulo) é o sinal mais comum do câncer de mama.", true, "O nódulo está presente em cerca de 90% dos casos. Qualquer caroço na mama merece avaliação.", 11, "rosa"],
+  ["A idade é o principal fator de risco para o câncer de mama.", true, "Segundo o Ministério da Saúde, as taxas aumentam a partir dos 40 anos; a idade média no diagnóstico é de 54 anos.", 2, "rosa"],
+  ["Amamentar é considerado um fator de proteção contra o câncer de mama.", true, "Segundo o Ministério da Saúde e o INCA, a amamentação é um fator protetor.", 4, "rosa"],
+  ["Pelo SUS, mulheres de 50 a 74 anos devem fazer mamografia a cada dois anos.", true, "É a orientação atual do SUS. Dos 40 aos 49, o exame pode ser feito em decisão conjunta com o profissional de saúde.", 9, "rosa"],
+  ["O câncer de próstata sempre dá sintomas desde o início.", false, "Na fase inicial, pode não apresentar sintomas.", 3, "azul"],
+  ["A próstata é responsável pela ereção.", false, "A próstata não é responsável pela ereção nem pelo orgasmo. Ela produz parte do líquido do sêmen.", 3, "azul"],
+  ["Dificuldade para urinar sempre indica câncer de próstata.", false, "Esses sintomas também aparecem em doenças benignas, como o aumento benigno da próstata, que atinge mais da metade dos homens acima de 50.", 3, "azul"],
+  ["Ter pai ou irmão com câncer de próstata antes dos 60 anos aumenta o risco.", true, "O histórico familiar é um dos fatores de risco apontados pelo INCA, junto com idade e excesso de peso.", 3, "azul"],
+  ["PSA alto significa câncer com certeza.", false, "Níveis altos podem indicar câncer, mas também doenças benignas. Só a biópsia confirma.", 3, "azul"],
+  ["O Ministério da Saúde recomenda que todos os homens sem sintomas façam exames de rastreamento.", false, "O Ministério da Saúde não recomenda o rastreamento populacional e orienta conversar com o profissional sobre riscos e benefícios.", 3, "azul"],
+  ["Peso adequado, atividade física e não fumar ajudam a reduzir o risco dos dois cânceres.", true, "São recomendações do INCA e do Ministério da Saúde para reduzir o risco de vários tipos de câncer, incluindo os dois.", 3, "ambos"]
+];
+const FONTES = {"1": ["Portal Afya", "https://portal.afya.com.br/oncologia/inca-projeta-aumento-dos-casos-de-cancer-no-brasil-entre-2026-e-2028"], "2": ["Ministério da Saúde — Câncer de mama", "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/cancer-de-mama"], "3": ["INCA — Câncer de próstata: vamos falar sobre isso?", "https://www.inca.gov.br/en/node/955"], "4": ["Conselho Federal de Nutricionistas", "https://cfn.org.br/cfn-defende-a-conscientizacao-sobre-o-cancer-de-mama/"], "5": ["Governo do Estado de São Paulo (SEMIL)", "https://semil.sp.gov.br/ambientenet/?p=8014"], "6": ["Diário do Grande ABC", "https://www.dgabc.com.br/Noticia/4266875/personificando-o-novembro-azul"], "7": ["Diário do Nordeste", "https://diariodonordeste.verdesmares.com.br/ceara/ce-pode-ter-3-mil-casos-de-cancer-de-prostata-ao-ano-entenda-divergencia-sobre-rastrear-a-doenca-1.3441228"], "8": ["Poder360", "https://www.poder360.com.br/poder-saude/cancer-de-mama-mata-mais-de-20-000-mulheres-por-ano/"], "9": ["Jornal de Brasília", "https://jornaldebrasilia.com.br/noticias/saude/faixa-etaria-da-mamografia-e-ampliada-no-sus-exame-passa-a-ser-indicado-ate-os-74-anos/"], "10": ["TNH1", "https://www.tnh1.com.br/noticia/nid/ministerio-da-saude-passa-a-recomendar-mamografia-a-partir-dos-40-anos/"], "11": ["Correio Braziliense", "https://www.correiobraziliense.com.br/cidades-df/2021/10/4954214-nodulos-nas-mamas-estao-presentes-em-90-dos-casos-de-cancer-diz-mastologista.html"]};
+const NOMES = {rosa:"Câncer de mama", azul:"Câncer de próstata", ambos:"Mama e próstata"};
+
+/* ---------- Planos ---------- */
+const seta = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+document.getElementById('regioes').innerHTML = PLANOS.map(p => p.link
+  ? `<a class="regiao" href="${p.link}" target="_blank" rel="noopener"><div><b>${p.nome}</b><span>Ver planos</span></div>${seta}</a>`
+  : `<a class="regiao" aria-disabled="true" role="link" tabindex="0"><div><b>${p.nome}</b><span>Link em breve</span></div>${seta}</a>`
+).join('');
+
+/* ---------- Troca entre campanha e aba de planos ---------- */
+const inicio = document.getElementById('inicio'), planos = document.getElementById('planos');
+function vista(v){
+  const p = v === 'planos';
+  planos.hidden = !p; inicio.hidden = p;
+  window.scrollTo(0,0);
+  if (p) document.getElementById('titulo-planos').focus({preventScroll:true});
+}
+document.querySelectorAll('[data-ir]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); vista(el.dataset.ir); }));
+document.querySelectorAll('a[href^="#"]:not([data-ir])').forEach(a => a.addEventListener('click', () => { if (!planos.hidden) { planos.hidden = true; inicio.hidden = false; } }));
+if (location.hash === '#planos') vista('planos');
+
+/* ---------- Mito ou verdade ---------- */
+const palco = document.getElementById('palco'), placar = document.getElementById('placar'), barra = document.getElementById('progresso');
+let filtro = 'todos', lista = [], i = 0, acertos = 0, respondido = false;
+function carregar(f){
+  filtro = f; i = 0; acertos = 0;
+  lista = CARTOES.filter(c => f === 'todos' || c[4] === f || c[4] === 'ambos');
+  document.querySelectorAll('.filtros button').forEach(b => b.setAttribute('aria-pressed', b.dataset.f === f));
+  render();
+}
+function atualizarPlacar(){ placar.textContent = `${Math.min(i+1,lista.length)} de ${lista.length}`; }
+function render(){
+  respondido = false;
+  barra.style.width = (i / lista.length * 100) + '%';
+  if (i >= lista.length){
+    barra.style.width = '100%'; placar.textContent = '';
+    palco.innerHTML = `<div class="cartao fim"><div class="v">Fim!</div><p>Você passou por todas as afirmações. Compartilhe com quem você ama.</p><div style="margin-top:1.5rem"><button class="btn" id="reiniciar">Ver de novo</button></div></div>`;
+    document.getElementById('reiniciar').onclick = () => carregar(filtro);
+    return;
+  }
+  const c = lista[i];
+  const cor = c[4] === 'ambos' ? 'rosa' : c[4];
+  atualizarPlacar();
+  palco.innerHTML = `
+    <div class="cartao" data-c="${cor}">
+      <span class="doenca">${NOMES[c[4]]}</span>
+      <p class="afirm">${c[0]}</p>
+      <div class="escolha" id="escolha"><button data-r="false">Mito</button><button data-r="true">Verdade</button></div>
+      <div class="resultado" id="resultado" hidden role="status"></div>
+    </div>
+    <div class="nav-quiz">
+      <button class="btn sec peq" id="pular">Pular</button>
+      <button class="btn peq" id="proximo" hidden>Próxima afirmação</button>
+    </div>`;
+  palco.querySelectorAll('#escolha button').forEach(b => b.onclick = () => responder(b.dataset.r === 'true'));
+  document.getElementById('pular').onclick = () => { i++; render(); };
+  document.getElementById('proximo').onclick = () => { i++; render(); };
+}
+function responder(r){
+  if (respondido) return; respondido = true;
+  const c = lista[i], certo = r === c[1];
+  if (certo) acertos++;
+  const res = document.getElementById('resultado');
+  res.className = 'resultado ' + (c[1] ? 'ok' : 'erro');
+  res.innerHTML = `<span class="veredito">É ${c[1] ? 'verdade' : 'mito'}.</span>${c[2]}<span class="fonte">Fonte: <a href="${FONTES[c[3]][1]}" target="_blank" rel="noopener">${FONTES[c[3]][0]}</a></span>`;
+  res.hidden = false;
+  document.getElementById('escolha').hidden = true;
+  document.getElementById('pular').hidden = true;
+  atualizarPlacar();
+  const p = document.getElementById('proximo'); p.hidden = false; p.focus();
+}
+document.querySelectorAll('.filtros button').forEach(b => b.onclick = () => carregar(b.dataset.f));
+carregar('todos');
+</script>
+</body>
+</html>
