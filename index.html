@@ -59,13 +59,35 @@ sup a:hover{color:var(--tinta);text-decoration:underline}
 /* topo */
 .topo{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--fundo);border-bottom:1px solid var(--linha)}
 .topo .wrap{display:flex;align-items:center;gap:1.5rem;height:4.25rem}
-.marca{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;text-decoration:none;display:flex;gap:.6rem;align-items:center;white-space:nowrap}
-.marca i{width:1px;height:1.2rem;background:var(--tinta);display:block}
-.marca small{font-weight:600;font-size:.7rem}
+.marca{display:block;flex:none;text-decoration:none;color:var(--tinta)}
+.marca .logo{display:block;height:1.55rem;aspect-ratio:758/86;background:currentColor;
+  -webkit-mask:url("data:image/png;base64,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") center/contain no-repeat;
+          mask:url("data:image/png;base64,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") center/contain no-repeat}
+@media (forced-colors:active){.marca .logo{background:CanvasText}}
 .menu{display:flex;gap:1.3rem;margin-left:auto}
 .menu a{text-decoration:none;color:var(--suave);font-weight:600;font-size:.95rem}
 .menu a:hover{color:var(--tinta)}
-@media (max-width:62rem){.menu{display:none}.topo .btn{margin-left:auto}}
+.menu a[aria-current="true"]{color:var(--tinta);box-shadow:inset 0 -2px 0 var(--tinta)}
+.l-curto{display:none}
+.burger{display:none;flex:none;width:2.75rem;height:2.75rem;border-radius:50%;border:1px solid var(--linha);background:var(--cartao);color:var(--tinta);cursor:pointer;place-items:center;padding:0}
+.burger span,.burger span::before,.burger span::after{display:block;width:1.1rem;height:2px;background:currentColor;border-radius:2px;position:relative;transition:transform .25s,background .25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.topo.aberto .burger span{background:transparent}
+.topo.aberto .burger span::before{transform:translateY(6px) rotate(45deg)}
+.topo.aberto .burger span::after{transform:translateY(-6px) rotate(-45deg)}
+.leitura{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:linear-gradient(90deg,var(--rosa),var(--azul));transform-origin:0 50%;transform:scaleX(var(--p,0))}
+@media (max-width:62rem){
+  .topo .wrap{gap:.6rem;height:3.75rem}
+  .topo .btn{margin-left:auto}
+  .burger{display:grid}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;padding:.4rem 1.25rem 1rem;background:var(--fundo);border-bottom:1px solid var(--linha);box-shadow:0 12px 24px rgba(40,20,30,.08)}
+  .topo.aberto .menu{display:flex}
+  .menu a{padding:.85rem 0;font-size:1.05rem;border-top:1px solid var(--linha)}
+  .menu a:first-child{border-top:0}
+  .menu a[aria-current="true"]{box-shadow:none}
+}
+@media (max-width:30rem){.l-longo{display:none}.l-curto{display:inline}.marca .logo{height:1.2rem}}
 
 /* hero */
 .hero{padding-top:clamp(3rem,8vw,5.5rem)}
@@ -139,11 +161,11 @@ sup a:hover{color:var(--tinta);text-decoration:underline}
 .sp-destaque small{display:block;font-weight:700;font-size:.82rem;opacity:.85;margin-bottom:.15rem}
 .sp-destaque b{display:block;font-size:1.08rem;line-height:1.35}
 .sp-destaque sup a{color:var(--sobre);opacity:.8}
-.sp-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.sp-grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
 .sp-grid li{background:var(--cartao);border-radius:18px;padding:1rem;display:flex;flex-direction:column;gap:.65rem;font-size:.96rem;line-height:1.4}
 .sp-grid .ic{width:2.5rem;height:2.5rem;border-radius:50%;background:var(--acc-bg);display:grid;place-items:center}
 .sp-grid .ic svg{width:1.3rem;height:1.3rem;stroke:var(--acc);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-@media (max-width:26rem){.sp-grid{grid-template-columns:1fr}}
+@media (max-width:21rem){.sp-grid{grid-template-columns:1fr}}
 .sp-risco{background:var(--cartao);border-radius:18px;padding:1rem 1.1rem}
 .sp-risco p{font-weight:700;font-size:.95rem}
 .chips{list-style:none;padding:0;margin:.6rem 0 0;display:flex;flex-wrap:wrap;gap:.45rem}
@@ -192,10 +214,11 @@ sup a:hover{color:var(--tinta);text-decoration:underline}
 .fim .v{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:3.5rem}
 
 /* cta */
-.cta{background:var(--fundo2);color:var(--tinta);border:1px solid var(--linha);border-radius:24px;padding:clamp(1.4rem,4vw,2rem) clamp(1.4rem,4vw,2.2rem);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem}
-.cta h2{color:var(--tinta);font-size:clamp(1.25rem,2.6vw,1.6rem);max-width:28ch}
-.cta p{color:var(--suave);margin-top:.3rem;max-width:34rem;font-size:1rem}
-.cta .btn{padding:.6rem 1.2rem;font-size:.95rem}
+.cta{background:var(--fundo2);color:var(--tinta);border:1px solid var(--linha);border-radius:18px;padding:.9rem 1rem .9rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.cta h2{color:var(--tinta);font-size:1.05rem;letter-spacing:-.01em}
+.cta p{color:var(--suave);margin-top:.1rem;font-size:.9rem;line-height:1.4}
+.cta .btn{flex:none;padding:.5rem 1rem;font-size:.9rem}
+.sec-cta{padding:0 0 clamp(2.5rem,6vw,4rem)}
 
 /* fontes */
 .saiba{margin-top:1.6rem}
@@ -218,17 +241,63 @@ footer .lema{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-s
 footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
 
 /* aba de planos */
-#planos{min-height:calc(100vh - 4.25rem);padding:clamp(3rem,8vw,5rem) 0}
-.voltar{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-weight:600;color:var(--suave);background:none;border:0;cursor:pointer;padding:0;margin-bottom:2rem}
+#planos{min-height:calc(100vh - 4.25rem);padding:clamp(2rem,5vw,3.5rem) 0}
+#planos h2{font-size:clamp(1.5rem,3.5vw,2rem)}
+#planos .intro{font-size:1rem;margin-top:.5rem}
+.voltar{display:inline-flex;align-items:center;gap:.4rem;font:inherit;font-weight:600;color:var(--suave);background:none;border:0;cursor:pointer;padding:0;margin-bottom:1.3rem}
 .voltar:hover{color:var(--tinta)}
-.regioes{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1rem;margin-top:2.5rem;max-width:52rem}
-.regiao{display:flex;justify-content:space-between;align-items:center;gap:1rem;text-decoration:none;padding:1.4rem 1.5rem;border-radius:22px;border:1px solid var(--linha);background:var(--cartao);box-shadow:var(--sombra);transition:border-color .15s,transform .15s}
+.regioes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem;margin-top:1.4rem;max-width:36rem}
+.regiao{display:flex;justify-content:space-between;align-items:center;gap:.6rem;text-decoration:none;padding:.8rem 1rem;border-radius:16px;border:1px solid var(--linha);background:var(--cartao);box-shadow:var(--sombra);transition:border-color .15s,transform .15s}
 .regiao:hover{border-color:var(--tinta);transform:translateY(-2px)}
-.regiao b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.35rem;font-weight:800;display:block}
-.regiao span{color:var(--suave);font-size:.9rem}
-.regiao svg{flex:none;width:1.4rem;height:1.4rem;stroke:var(--tinta);fill:none;stroke-width:2}
+.regiao b{font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem;font-weight:800;display:block;line-height:1.2}
+.regiao span{color:var(--suave);font-size:.82rem}
+.regiao svg{flex:none;width:1.1rem;height:1.1rem;stroke:var(--tinta);fill:none;stroke-width:2}
 .regiao[aria-disabled="true"]{opacity:.6;cursor:not-allowed}
 .regiao[aria-disabled="true"]:hover{transform:none;border-color:var(--linha)}
+
+/* ---------- abas + carrossel mama/próstata no celular ---------- */
+.abas{display:none}
+@media (max-width:50rem){
+  .abas{display:flex;gap:.3rem;margin-top:1.4rem;padding:.3rem;border-radius:999px;background:var(--cartao);border:1px solid var(--linha);position:sticky;top:calc(env(safe-area-inset-top,0px) + 4.25rem);z-index:5;box-shadow:0 6px 16px rgba(40,20,30,.06)}
+  .abas button{flex:1;font:inherit;font-weight:700;font-size:.92rem;padding:.55rem .6rem;border-radius:999px;border:0;background:transparent;color:var(--suave);cursor:pointer;transition:background .25s,color .25s}
+  .abas button[aria-pressed="true"]{background:var(--acc);color:var(--sobre)}
+  .par{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc(100% - 1.75rem);gap:.75rem;align-items:start;
+    overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;margin:1rem -1.25rem 0;padding:0 1.25rem;scroll-padding:0 1.25rem}
+  .par::-webkit-scrollbar{display:none}
+  .par > *{scroll-snap-align:start}
+  .habitos + .abas{margin-top:2rem}
+}
+
+/* ---------- celular mais enxuto ---------- */
+@media (max-width:40rem){
+  section{padding:2.75rem 0}
+  body{font-size:1rem}
+  .hero h1{font-size:clamp(2.8rem,13vw,4rem)}
+  .hero .lead{font-size:1.05rem}
+  .duo{margin-top:2rem;gap:.6rem}
+  .video .tela{aspect-ratio:2/1}
+  .habitos{grid-template-columns:1fr 1fr;gap:.6rem}
+  .habito{padding:1rem}
+  .habito .ic{width:2.5rem;height:2.5rem}
+  .habito span{font-size:.88rem;line-height:1.45;display:block;margin-top:.2rem}
+  .sp-grid li{padding:.85rem;font-size:.92rem}
+  .numero{padding:.85rem 1rem;gap:.3rem .8rem}
+  .numero .v{min-width:0}
+  .numero p{min-width:9rem}
+  .cta{flex-wrap:wrap}
+  .cta .btn{width:100%}
+}
+@media (max-width:22rem){.habitos{grid-template-columns:1fr}}
+
+/* ---------- movimento ---------- */
+.fx .rv{opacity:0;transform:translate3d(0,28px,0);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1);transition-delay:calc(var(--i,0) * 70ms)}
+.fx .rv.in{opacity:1;transform:none}
+@keyframes entra{from{opacity:0;transform:translate3d(28px,0,0)}to{opacity:1;transform:none}}
+@keyframes surge{from{opacity:0;transform:translate3d(0,8px,0)}to{opacity:1;transform:none}}
+.fx .cartao{animation:entra .45s cubic-bezier(.22,1,.36,1)}
+.fx .resultado{animation:surge .35s ease}
+.numero .v{font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){.fx .rv{opacity:1;transform:none}.fx .cartao,.fx .resultado{animation:none}}
 </style>
 </head>
 <body>
@@ -239,16 +308,18 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
 
 <header class="topo">
   <div class="wrap">
-    <a class="marca" href="#" data-ir="inicio" aria-label="Wap e WAAW by Alok, início">Wap<i></i>WAAW <small>by Alok</small></a>
-    <nav class="menu" aria-label="Seções">
+    <a class="marca" href="#" data-ir="inicio" aria-label="Wap, WAAW by Alok e Freso: voltar ao início"><span class="logo" role="img" aria-hidden="true"></span></a>
+    <nav class="menu" id="menu-secoes" aria-label="Seções">
       <a href="#por-que-cedo">Por que cedo</a>
       <a href="#numeros">Números</a>
       <a href="#sinais">Sinais</a>
       <a href="#prevencao">Prevenção</a>
       <a href="#mito-ou-verdade">Mito ou verdade</a>
     </nav>
-    <a class="btn peq" href="#planos" data-ir="planos">Conheça nossos planos</a>
+    <a class="btn peq" href="#planos" data-ir="planos"><span class="l-longo">Conheça nossos planos</span><span class="l-curto">Planos</span></a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="menu-secoes" aria-label="Abrir menu de seções"><span></span></button>
   </div>
+  <span class="leitura" aria-hidden="true"></span>
 </header>
 
 <main id="inicio">
@@ -295,9 +366,9 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
     <div>
       <h2>Por que descobrir cedo faz toda a diferença</h2>
       <ol class="motivos">
-        <li><span class="n">1</span><p>No câncer de mama, o prognóstico é <b>mais favorável quando a doença é diagnosticada e tratada cedo</b>.</p></li>
-        <li><span class="n">2</span><p>Tumores de mama descobertos no início podem ser tratados com <b>cirurgias que preservam a mama</b>.</p></li>
-        <li><span class="n">3</span><p>No câncer de próstata, tratar na fase inicial pode <b>evitar que a doença chegue a uma fase avançada</b>.</p></li>
+        <li><span class="n">1</span><p>No câncer de mama, o prognóstico é <b>mais favorável quando a doença é diagnosticada e tratada cedo</b>.<sup><a href="#f6" aria-label="Fonte 6">6</a></sup></p></li>
+        <li><span class="n">2</span><p>Tumores de mama descobertos no início podem ser tratados com <b>cirurgias que preservam a mama</b>.<sup><a href="#f6" aria-label="Fonte 6">6</a></sup></p></li>
+        <li><span class="n">3</span><p>No câncer de próstata, tratar na fase inicial pode <b>evitar que a doença chegue a uma fase avançada</b>.<sup><a href="#f10" aria-label="Fonte 10">10</a></sup></p></li>
       </ol>
     </div>
   </div>
@@ -306,24 +377,25 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
 <section class="alt" id="numeros">
   <div class="wrap">
     <h2>O tamanho de cada doença</h2>
-    <p class="intro">Excluindo o câncer de pele não melanoma, são os tipos de câncer mais comuns entre mulheres e entre homens no país.</p>
+    <p class="intro">Excluindo o câncer de pele não melanoma, são os tipos de câncer mais comuns entre mulheres e entre homens no país. Números da estimativa mais recente do INCA, publicada em fevereiro de 2026.<sup><a href="#f1" aria-label="Fonte 1">1</a></sup></p>
+    <div class="abas" role="group" aria-label="Escolha o tema"><button type="button" data-c="rosa" aria-pressed="true">Câncer de mama</button><button type="button" data-c="azul" aria-pressed="false">Câncer de próstata</button></div>
     <div class="par">
       <div class="painel" data-c="rosa">
         <div class="cab"><h3>Câncer de mama <small>Outubro Rosa</small></h3></div>
         <p class="def">Multiplicação desordenada de células anormais da mama, que forma um tumor capaz de invadir outros tecidos. É o câncer mais comum entre as mulheres.</p>
         <div class="numeros">
-          <div class="numero"><span class="v">78.610</span><p>novos casos por ano, de 2026 a 2028</p></div>
-          <div class="numero"><span class="v">30%</span><p>de todos os diagnósticos de câncer em mulheres</p></div>
-          <div class="numero"><span class="v">20.993</span><p>mortes em 2024 (dado preliminar); é a primeira causa de morte por câncer em mulheres</p></div>
+          <div class="numero"><span class="v">78.610</span><p>novos casos por ano, de 2026 a 2028<sup><a href="#f1" aria-label="Fonte 1">1</a>,<a href="#f2" aria-label="Fonte 2">2</a></sup></p></div>
+          <div class="numero"><span class="v">30%</span><p>dos diagnósticos de câncer em mulheres<sup><a href="#f2" aria-label="Fonte 2">2</a></sup></p></div>
+          <div class="numero"><span class="v">20.993</span><p>mortes em 2024 (dado preliminar do Ministério da Saúde)<sup><a href="#f4" aria-label="Fonte 4">4</a></sup></p></div>
         </div>
       </div>
       <div class="painel" data-c="azul">
         <div class="cab"><h3>Câncer de próstata <small>Novembro Azul</small></h3></div>
         <p class="def">A próstata é uma glândula logo abaixo da bexiga. Na maioria dos casos, o câncer cresce devagar; em outros, pode avançar rápido.</p>
         <div class="numeros">
-          <div class="numero"><span class="v">77.920</span><p>novos casos por ano, de 2026 a 2028</p></div>
-          <div class="numero"><span class="v">30%</span><p>de todos os diagnósticos de câncer em homens</p></div>
-          <div class="numero"><span class="v">+17 mil</span><p>mortes em 2023, uma média de 47 por dia</p></div>
+          <div class="numero"><span class="v">77.920</span><p>novos casos por ano, de 2026 a 2028<sup><a href="#f1" aria-label="Fonte 1">1</a>,<a href="#f3" aria-label="Fonte 3">3</a></sup></p></div>
+          <div class="numero"><span class="v">30%</span><p>dos diagnósticos de câncer em homens<sup><a href="#f1" aria-label="Fonte 1">1</a></sup></p></div>
+          <div class="numero"><span class="v">17.587</span><p>mortes em 2024, uma média de 48 por dia<sup><a href="#f5" aria-label="Fonte 5">5</a></sup></p></div>
         </div>
       </div>
     </div>
@@ -334,12 +406,13 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
   <div class="wrap">
     <h2>Sinais que merecem atenção</h2>
     <p class="intro">Nenhum destes sinais significa câncer com certeza, mas todos merecem uma consulta o quanto antes.</p>
+    <div class="abas" role="group" aria-label="Escolha o tema"><button type="button" data-c="rosa" aria-pressed="true">Câncer de mama</button><button type="button" data-c="azul" aria-pressed="false">Câncer de próstata</button></div>
     <div class="par">
       <article class="sinal-painel" data-c="rosa">
         <div class="sp-cab"><h3>Câncer de mama <small>Outubro Rosa</small></h3></div>
         <div class="sp-destaque">
           <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="14" cy="10" r="2.4"/></svg></span>
-          <div><small>O sinal mais comum</small><b>Caroço (nódulo) endurecido e fixo na mama, presente em cerca de 90% dos casos.</b></div>
+          <div><small>O sinal mais comum</small><b>Caroço (nódulo) endurecido e fixo na mama, presente em cerca de 90% dos casos.<sup><a href="#f7" aria-label="Fonte 7">7</a></sup></b></div>
         </div>
         <ul class="sp-grid">
           <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="9" cy="10" r=".8"/><circle cx="13.5" cy="8.5" r=".8"/><circle cx="15" cy="13" r=".8"/><circle cx="10" cy="14.5" r=".8"/></svg></span>Pele retraída ou com aspecto de casca de laranja</li>
@@ -348,7 +421,7 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
           <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="2.2"/><circle cx="15.5" cy="7" r="1.6"/><circle cx="14" cy="15" r="2.8"/></svg></span>Ínguas ou caroços na axila</li>
         </ul>
         <div class="sp-risco">
-          <p>Quem tem mais risco</p>
+          <p>Quem tem mais risco<sup><a href="#f6" aria-label="Fonte 6">6</a></sup></p>
           <ul class="chips">
             <li>Idade: o risco aumenta a partir dos 40</li>
             <li>Mãe, irmã ou filha com a doença</li>
@@ -357,13 +430,13 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
             <li>Consumo de álcool</li>
           </ul>
         </div>
-        <p class="sp-nota"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Homens também podem ter câncer de mama, mas é raro: cerca de 1% dos casos.</span></p>
+        <p class="sp-nota"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Homens também podem ter câncer de mama, mas é raro: cerca de 1% dos casos.<sup><a href="#f8" aria-label="Fonte 8">8</a></sup></span></p>
       </article>
       <article class="sinal-painel" data-c="azul">
         <div class="sp-cab"><h3>Câncer de próstata <small>Novembro Azul</small></h3></div>
         <div class="sp-destaque">
           <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-7 10-7c2 0 3.7.6 5.2 1.5M22 12s-3.5 7-10 7c-2 0-3.7-.6-5.2-1.5"/><path d="M3 3l18 18"/></svg></span>
-          <div><small>Atenção</small><b>No início, pode não dar nenhum sintoma. Por isso a consulta regular importa.</b></div>
+          <div><small>Atenção</small><b>No início, pode não dar nenhum sintoma. Por isso a consulta regular importa.<sup><a href="#f10" aria-label="Fonte 10">10</a></sup></b></div>
         </div>
         <ul class="sp-grid">
           <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span>Dificuldade ou demora para começar e terminar de urinar</li>
@@ -372,26 +445,15 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
           <li><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span>Sangue na urina</li>
         </ul>
         <div class="sp-risco">
-          <p>Quem tem mais risco</p>
+          <p>Quem tem mais risco<sup><a href="#f10" aria-label="Fonte 10">10</a></sup></p>
           <ul class="chips">
             <li>Mais de 55 anos: 9 em cada 10 casos</li>
             <li>Pai ou irmão com a doença antes dos 60</li>
             <li>Sobrepeso e obesidade</li>
           </ul>
         </div>
-        <p class="sp-nota"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Os sintomas urinários também aparecem no aumento benigno da próstata, que atinge mais da metade dos homens acima de 50.</span></p>
+        <p class="sp-nota"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>Os sintomas urinários também aparecem no aumento benigno da próstata, que atinge mais da metade dos homens acima de 50.<sup><a href="#f10" aria-label="Fonte 10">10</a></sup></span></p>
       </article>
-    </div>
-    <div class="fontes">
-      <details class="saiba">
-        <summary class="btn sec">Fontes utilizadas</summary>
-        <ol>
-          <li><b>Ministério da Saúde — Câncer de mama</b> (Saúde de A a Z). <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/cancer-de-mama" target="_blank" rel="noopener">gov.br/saude</a></li>
-          <li><b>Correio Braziliense</b> — nódulo presente em 90% dos casos de câncer de mama. <a href="https://www.correiobraziliense.com.br/cidades-df/2021/10/4954214-nodulos-nas-mamas-estao-presentes-em-90-dos-casos-de-cancer-diz-mastologista.html" target="_blank" rel="noopener">correiobraziliense.com.br</a></li>
-          <li><b>Conselho Federal de Nutricionistas</b> — hábitos de prevenção do câncer de mama. <a href="https://cfn.org.br/cfn-defende-a-conscientizacao-sobre-o-cancer-de-mama/" target="_blank" rel="noopener">cfn.org.br</a></li>
-          <li><b>INCA — Câncer de próstata: vamos falar sobre isso?</b> Cartilha oficial do INCA. <a href="https://www.inca.gov.br/en/node/955" target="_blank" rel="noopener">inca.gov.br</a></li>
-        </ol>
-      </details>
     </div>
   </div>
 </section>
@@ -399,7 +461,7 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
 <section class="alt" id="prevencao">
   <div class="wrap">
     <h2>Hábitos que protegem os dois</h2>
-    <p class="intro">O INCA recomenda os mesmos cuidados para reduzir o risco do câncer de mama e do câncer de próstata.</p>
+    <p class="intro">O INCA recomenda os mesmos cuidados para reduzir o risco do câncer de mama e do câncer de próstata.<sup><a href="#f10" aria-label="Fonte 10">10</a>,<a href="#f12" aria-label="Fonte 12">12</a></sup></p>
     <div class="habitos">
       <div class="habito"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M7 20V10m10 10V10M5 10l7-6 7 6"/></svg></span><b>Peso adequado</b><span>Excesso de peso aumenta o risco dos dois.</span></div>
       <div class="habito"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="14" cy="4.5" r="2"/><path d="M8 21l3-6 3 2v4M7 12l3-3 3 1 2 3h3M10 9l1 6"/></svg></span><b>Atividade física</b><span>Movimentar o corpo com regularidade.</span></div>
@@ -407,19 +469,20 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
       <div class="habito"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M5.6 5.6l12.8 12.8"/></svg></span><b>Sem cigarro e sem álcool</b><span>Evite bebidas alcoólicas e cigarro.</span></div>
     </div>
 
+    <div class="abas" role="group" aria-label="Escolha o tema"><button type="button" data-c="rosa" aria-pressed="true">Câncer de mama</button><button type="button" data-c="azul" aria-pressed="false">Câncer de próstata</button></div>
     <div class="par">
       <article class="cartao-b" data-c="rosa">
         <div class="cab"><h3>Como se cuidar: mama</h3></div>
         <ul class="cuidar">
           <li><div><b>Conheça suas mamas</b><span>Olhe, palpe e sinta suas mamas com frequência. Se notar uma alteração que não passa, procure uma Unidade Básica de Saúde.</span></div></li>
-          <li><div><b>Mamografia a cada dois anos</b><span>Recomendada pelo SUS dos 50 aos 74 anos. Dos 40 aos 49, o exame pode ser feito em decisão conjunta com o profissional de saúde.</span></div></li>
+          <li><div><b>Mamografia a cada dois anos</b><span>Recomendada pelo SUS dos 50 aos 74 anos. Dos 40 aos 49, o exame pode ser feito em decisão conjunta com o profissional de saúde.<sup><a href="#f9" aria-label="Fonte 9">9</a></sup></span></div></li>
         </ul>
       </article>
       <article class="cartao-b" data-c="azul">
         <div class="cab"><h3>Como se cuidar: próstata</h3></div>
         <ul class="cuidar">
-          <li><div><b>Com sintomas, procure a unidade de saúde</b><span>Os exames são o toque retal e o PSA (de sangue). Só a biópsia confirma o diagnóstico.</span></div></li>
-          <li><div><b>Sem sintomas, converse com o médico</b><span>Decidam juntos sobre exames de rotina. A Sociedade Brasileira de Urologia orienta essa conversa a partir dos 50 anos, ou dos 45 para homens negros, obesos ou com histórico familiar. O Ministério da Saúde não recomenda o rastreamento de todos os homens.</span></div></li>
+          <li><div><b>Com sintomas, procure a unidade de saúde</b><span>Os exames são o toque retal e o PSA (de sangue). Só a biópsia confirma o diagnóstico.<sup><a href="#f10" aria-label="Fonte 10">10</a></sup></span></div></li>
+          <li><div><b>Sem sintomas, converse com o médico</b><span>Decidam juntos sobre exames de rotina. A Sociedade Brasileira de Urologia orienta essa conversa a partir dos 50 anos, ou dos 45 para homens negros ou com histórico familiar. O Ministério da Saúde não recomenda o rastreamento de todos os homens.<sup><a href="#f10" aria-label="Fonte 10">10</a>,<a href="#f11" aria-label="Fonte 11">11</a></sup></span></div></li>
         </ul>
       </article>
     </div>
@@ -429,14 +492,10 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
 <section id="mito-ou-verdade">
   <div class="wrap">
     <h2>Mito ou verdade?</h2>
-    <p class="intro">Leia a afirmação, escolha sua resposta e veja a explicação com a fonte.</p>
+    <p class="intro">Afirmações sobre câncer de mama e de próstata, misturadas. Escolha sua resposta e veja a explicação com a fonte.</p>
     <div class="quiz">
       <div class="quiz-topo">
-        <div class="filtros" role="group" aria-label="Filtrar afirmações">
-          <button data-f="todos" aria-pressed="true">Todas</button>
-          <button data-f="rosa" aria-pressed="false">Câncer de mama</button>
-          <button data-f="azul" aria-pressed="false">Câncer de próstata</button>
-        </div>
+        <span class="placar">Mama e próstata</span>
         <span class="placar" id="placar" aria-live="polite"></span>
       </div>
       <div class="barra" aria-hidden="true"><i id="progresso"></i></div>
@@ -445,7 +504,32 @@ footer .lema .r{color:var(--rosa)} footer .lema .a{color:var(--azul)}
   </div>
 </section>
 
-<section style="padding-top:0">
+<section class="alt fontes" id="fontes">
+  <div class="wrap">
+    <h2>Fontes utilizadas</h2>
+    <p class="intro">Os números pequenos ao lado de cada dado levam à fonte correspondente. Revisado em outubro de 2026.</p>
+    <details class="saiba" id="fontes-lista">
+      <summary class="btn sec">Ver as 12 fontes</summary>
+      <ol>
+          <li id="f1"><b>INCA</b> — Estimativa 2026–2028: INCA estima 781 mil novos casos de câncer por ano no Brasil (fev. 2026). <a href="https://ninho.inca.gov.br/jspui/bitstream/123456789/18044/1/INCA%20estima%20781%20mil%20novos%20casos%20de%20c%c3%a2ncer%20por%20ano%20no%20Brasil%20de%202026%20a%202028.pdf" target="_blank" rel="noopener">ninho.inca.gov.br</a></li>
+          <li id="f2"><b>CNN Brasil</b> — Inca estima 78,6 mil casos de câncer de mama no Brasil para 2026. <a href="https://www.cnnbrasil.com.br/saude/inca-estima-786-mil-casos-de-cancer-de-mama-no-brasil-para-2026/" target="_blank" rel="noopener">cnnbrasil.com.br</a></li>
+          <li id="f3"><b>Correio da Manhã</b> — Estimativa do INCA: 77.920 casos anuais de câncer de próstata (5 fev. 2026). <a href="https://digital.correiodamanha.com.br/jornalcorreiodamanha/2026/02/05/22260b/pdf/0502cmanha19.pdf" target="_blank" rel="noopener">correiodamanha.com.br</a></li>
+          <li id="f4"><b>Poder360</b> — Câncer de mama mata mais de 20.000 mulheres por ano (dados preliminares do Ministério da Saúde). <a href="https://www.poder360.com.br/poder-saude/cancer-de-mama-mata-mais-de-20-000-mulheres-por-ano/" target="_blank" rel="noopener">poder360.com.br</a></li>
+          <li id="f5"><b>Jovem Pan</b> — Câncer de próstata causa a morte de 48 homens por dia no Brasil (painel de mortalidade do Ministério da Saúde). <a href="https://jovempan.com.br/saude/cancer-de-prostata-causa-a-morte-de-48-homens-por-dia-no-brasil.html" target="_blank" rel="noopener">jovempan.com.br</a></li>
+          <li id="f6"><b>Ministério da Saúde</b> — Câncer de mama (Saúde de A a Z). <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/cancer-de-mama" target="_blank" rel="noopener">gov.br/saude</a></li>
+          <li id="f7"><b>Correio Braziliense</b> — Nódulos nas mamas estão presentes em 90% dos casos de câncer, diz mastologista. <a href="https://www.correiobraziliense.com.br/cidades-df/2021/10/4954214-nodulos-nas-mamas-estao-presentes-em-90-dos-casos-de-cancer-diz-mastologista.html" target="_blank" rel="noopener">correiobraziliense.com.br</a></li>
+          <li id="f8"><b>IstoÉ</b> — Homens representam 1% do total de casos de câncer de mama no Brasil. <a href="https://istoe.com.br/homens-representam-1-do-total-de-casos-de-cancer-de-mama-no-brasil/" target="_blank" rel="noopener">istoe.com.br</a></li>
+          <li id="f9"><b>Jornal de Brasília</b> — Faixa etária da mamografia é ampliada no SUS: exame passa a ser indicado até os 74 anos. <a href="https://jornaldebrasilia.com.br/noticias/saude/faixa-etaria-da-mamografia-e-ampliada-no-sus-exame-passa-a-ser-indicado-ate-os-74-anos/" target="_blank" rel="noopener">jornaldebrasilia.com.br</a></li>
+          <li id="f10"><b>INCA</b> — Câncer de próstata: vamos falar sobre isso? (cartilha oficial). <a href="https://www.inca.gov.br/en/node/955" target="_blank" rel="noopener">inca.gov.br</a></li>
+          <li id="f11"><b>Diário do Nordeste</b> — Entenda a divergência sobre rastrear o câncer de próstata (SBU × Ministério da Saúde). <a href="https://diariodonordeste.verdesmares.com.br/ceara/ce-pode-ter-3-mil-casos-de-cancer-de-prostata-ao-ano-entenda-divergencia-sobre-rastrear-a-doenca-1.3441228" target="_blank" rel="noopener">diariodonordeste.com.br</a></li>
+          <li id="f12"><b>Conselho Federal de Nutricionistas</b> — Hábitos de prevenção do câncer de mama. <a href="https://cfn.org.br/cfn-defende-a-conscientizacao-sobre-o-cancer-de-mama/" target="_blank" rel="noopener">cfn.org.br</a></li>
+      </ol>
+      <p class="nota">Dados de mortalidade de 2024 ainda são preliminares e podem ser revisados pelo Ministério da Saúde. Este material é informativo e não substitui a consulta com um profissional de saúde.</p>
+    </details>
+  </div>
+</section>
+
+<section class="sec-cta">
   <div class="wrap">
     <div class="cta">
       <div>
@@ -484,20 +568,22 @@ const PLANOS = [
 
 /* Mito ou verdade: [afirmação, é verdade?, explicação, nº da fonte, doença] */
 const CARTOES = [
-  ["Só mulheres podem ter câncer de mama.", false, "Homens também podem ter, mas é raro: cerca de 1% dos casos.", 2, "rosa"],
-  ["O caroço (nódulo) é o sinal mais comum do câncer de mama.", true, "O nódulo está presente em cerca de 90% dos casos. Qualquer caroço na mama merece avaliação.", 11, "rosa"],
-  ["A idade é o principal fator de risco para o câncer de mama.", true, "Segundo o Ministério da Saúde, as taxas aumentam a partir dos 40 anos; a idade média no diagnóstico é de 54 anos.", 2, "rosa"],
-  ["Amamentar é considerado um fator de proteção contra o câncer de mama.", true, "Segundo o Ministério da Saúde e o INCA, a amamentação é um fator protetor.", 4, "rosa"],
-  ["Pelo SUS, mulheres de 50 a 74 anos devem fazer mamografia a cada dois anos.", true, "É a orientação atual do SUS. Dos 40 aos 49, o exame pode ser feito em decisão conjunta com o profissional de saúde.", 9, "rosa"],
-  ["O câncer de próstata sempre dá sintomas desde o início.", false, "Na fase inicial, pode não apresentar sintomas.", 3, "azul"],
-  ["A próstata é responsável pela ereção.", false, "A próstata não é responsável pela ereção nem pelo orgasmo. Ela produz parte do líquido do sêmen.", 3, "azul"],
-  ["Dificuldade para urinar sempre indica câncer de próstata.", false, "Esses sintomas também aparecem em doenças benignas, como o aumento benigno da próstata, que atinge mais da metade dos homens acima de 50.", 3, "azul"],
-  ["Ter pai ou irmão com câncer de próstata antes dos 60 anos aumenta o risco.", true, "O histórico familiar é um dos fatores de risco apontados pelo INCA, junto com idade e excesso de peso.", 3, "azul"],
-  ["PSA alto significa câncer com certeza.", false, "Níveis altos podem indicar câncer, mas também doenças benignas. Só a biópsia confirma.", 3, "azul"],
-  ["O Ministério da Saúde recomenda que todos os homens sem sintomas façam exames de rastreamento.", false, "O Ministério da Saúde não recomenda o rastreamento populacional e orienta conversar com o profissional sobre riscos e benefícios.", 3, "azul"],
-  ["Peso adequado, atividade física e não fumar ajudam a reduzir o risco dos dois cânceres.", true, "São recomendações do INCA e do Ministério da Saúde para reduzir o risco de vários tipos de câncer, incluindo os dois.", 3, "ambos"]
+  ["Só mulheres podem ter câncer de mama.", false, "Homens também podem ter, mas é raro: cerca de 1% dos casos.", 8, "rosa"],
+  ["O caroço (nódulo) é o sinal mais comum do câncer de mama.", true, "O nódulo está presente em cerca de 90% dos casos. Qualquer caroço na mama merece avaliação.", 7, "rosa"],
+  ["A idade é um dos principais fatores de risco para o câncer de mama.", true, "Segundo o Ministério da Saúde, o risco aumenta com a idade, principalmente a partir dos 40 anos.", 6, "rosa"],
+  ["Amamentar é considerado um fator de proteção contra o câncer de mama.", true, "Segundo o Ministério da Saúde e o INCA, a amamentação é um fator protetor.", 6, "rosa"],
+  ["Pelo SUS, mulheres de 50 a 74 anos devem fazer mamografia a cada dois anos.", true, "É a orientação do SUS desde 2025, quando o limite passou de 69 para 74 anos. Dos 40 aos 49, o exame pode ser feito em decisão conjunta com o profissional de saúde.", 9, "rosa"],
+  ["O câncer de próstata sempre dá sintomas desde o início.", false, "Na fase inicial, pode não apresentar sintomas.", 10, "azul"],
+  ["A próstata é responsável pela ereção.", false, "A próstata não é responsável pela ereção nem pelo orgasmo. Ela produz parte do líquido do sêmen.", 10, "azul"],
+  ["Dificuldade para urinar sempre indica câncer de próstata.", false, "Esses sintomas também aparecem em doenças benignas, como o aumento benigno da próstata, que atinge mais da metade dos homens acima de 50.", 10, "azul"],
+  ["Ter pai ou irmão com câncer de próstata antes dos 60 anos aumenta o risco.", true, "O histórico familiar é um dos fatores de risco apontados pelo INCA, junto com idade e excesso de peso.", 10, "azul"],
+  ["PSA alto significa câncer com certeza.", false, "Níveis altos podem indicar câncer, mas também doenças benignas. Só a biópsia confirma.", 10, "azul"],
+  ["O Ministério da Saúde recomenda que todos os homens sem sintomas façam exames de rastreamento.", false, "O Ministério da Saúde não recomenda o rastreamento populacional e orienta conversar com o profissional sobre riscos e benefícios.", 11, "azul"],
+  ["Peso adequado, atividade física e não fumar ajudam a reduzir o risco dos dois cânceres.", true, "São recomendações do INCA e do Ministério da Saúde para reduzir o risco de vários tipos de câncer, incluindo os dois.", 10, "ambos"]
 ];
-const FONTES = {"1": ["Portal Afya", "https://portal.afya.com.br/oncologia/inca-projeta-aumento-dos-casos-de-cancer-no-brasil-entre-2026-e-2028"], "2": ["Ministério da Saúde — Câncer de mama", "https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/cancer-de-mama"], "3": ["INCA — Câncer de próstata: vamos falar sobre isso?", "https://www.inca.gov.br/en/node/955"], "4": ["Conselho Federal de Nutricionistas", "https://cfn.org.br/cfn-defende-a-conscientizacao-sobre-o-cancer-de-mama/"], "5": ["Governo do Estado de São Paulo (SEMIL)", "https://semil.sp.gov.br/ambientenet/?p=8014"], "6": ["Diário do Grande ABC", "https://www.dgabc.com.br/Noticia/4266875/personificando-o-novembro-azul"], "7": ["Diário do Nordeste", "https://diariodonordeste.verdesmares.com.br/ceara/ce-pode-ter-3-mil-casos-de-cancer-de-prostata-ao-ano-entenda-divergencia-sobre-rastrear-a-doenca-1.3441228"], "8": ["Poder360", "https://www.poder360.com.br/poder-saude/cancer-de-mama-mata-mais-de-20-000-mulheres-por-ano/"], "9": ["Jornal de Brasília", "https://jornaldebrasilia.com.br/noticias/saude/faixa-etaria-da-mamografia-e-ampliada-no-sus-exame-passa-a-ser-indicado-ate-os-74-anos/"], "10": ["TNH1", "https://www.tnh1.com.br/noticia/nid/ministerio-da-saude-passa-a-recomendar-mamografia-a-partir-dos-40-anos/"], "11": ["Correio Braziliense", "https://www.correiobraziliense.com.br/cidades-df/2021/10/4954214-nodulos-nas-mamas-estao-presentes-em-90-dos-casos-de-cancer-diz-mastologista.html"]};
+/* As fontes do quiz vêm da lista "Fontes utilizadas" (ids f1, f2...) */
+const FONTES = {};
+document.querySelectorAll('#fontes-lista li[id]').forEach(li => { const a = li.querySelector('a'); FONTES[li.id.slice(1)] = [li.querySelector('b').textContent, a.href]; });
 const NOMES = {rosa:"Câncer de mama", azul:"Câncer de próstata", ambos:"Mama e próstata"};
 
 /* ---------- Planos ---------- */
@@ -521,11 +607,13 @@ if (location.hash === '#planos') vista('planos');
 
 /* ---------- Mito ou verdade ---------- */
 const palco = document.getElementById('palco'), placar = document.getElementById('placar'), barra = document.getElementById('progresso');
-let filtro = 'todos', lista = [], i = 0, acertos = 0, respondido = false;
-function carregar(f){
-  filtro = f; i = 0; acertos = 0;
-  lista = CARTOES.filter(c => f === 'todos' || c[4] === f || c[4] === 'ambos');
-  document.querySelectorAll('.filtros button').forEach(b => b.setAttribute('aria-pressed', b.dataset.f === f));
+let lista = [], i = 0, acertos = 0, respondido = false;
+/* Baralho único: alterna mama e próstata; as afirmações sobre os dois ficam no fim */
+function carregar(){
+  i = 0; acertos = 0; lista = [];
+  const r = CARTOES.filter(c => c[4] === 'rosa'), a = CARTOES.filter(c => c[4] === 'azul');
+  for (let k = 0; k < Math.max(r.length, a.length); k++){ if (r[k]) lista.push(r[k]); if (a[k]) lista.push(a[k]); }
+  lista.push(...CARTOES.filter(c => c[4] === 'ambos'));
   render();
 }
 function atualizarPlacar(){ placar.textContent = `${Math.min(i+1,lista.length)} de ${lista.length}`; }
@@ -534,8 +622,8 @@ function render(){
   barra.style.width = (i / lista.length * 100) + '%';
   if (i >= lista.length){
     barra.style.width = '100%'; placar.textContent = '';
-    palco.innerHTML = `<div class="cartao fim"><div class="v">Fim!</div><p>Você passou por todas as afirmações. Compartilhe com quem você ama.</p><div style="margin-top:1.5rem"><button class="btn" id="reiniciar">Ver de novo</button></div></div>`;
-    document.getElementById('reiniciar').onclick = () => carregar(filtro);
+    palco.innerHTML = `<div class="cartao fim"><div class="v">${acertos} de ${lista.length}</div><p>Você acertou ${acertos} de ${lista.length} afirmações. Compartilhe com quem você ama.</p><div style="margin-top:1.5rem"><button class="btn" id="reiniciar">Ver de novo</button></div></div>`;
+    document.getElementById('reiniciar').onclick = () => carregar();
     return;
   }
   const c = lista[i];
@@ -562,15 +650,70 @@ function responder(r){
   if (certo) acertos++;
   const res = document.getElementById('resultado');
   res.className = 'resultado ' + (c[1] ? 'ok' : 'erro');
-  res.innerHTML = `<span class="veredito">É ${c[1] ? 'verdade' : 'mito'}.</span>${c[2]}<span class="fonte">Fonte: <a href="${FONTES[c[3]][1]}" target="_blank" rel="noopener">${FONTES[c[3]][0]}</a></span>`;
+  res.innerHTML = `<span class="veredito">${certo ? 'Você acertou!' : 'Não foi dessa vez.'} É ${c[1] ? 'verdade' : 'mito'}.</span>${c[2]}<span class="fonte">Fonte: <a href="${FONTES[c[3]][1]}" target="_blank" rel="noopener">${FONTES[c[3]][0]}</a></span>`;
   res.hidden = false;
   document.getElementById('escolha').hidden = true;
   document.getElementById('pular').hidden = true;
   atualizarPlacar();
   const p = document.getElementById('proximo'); p.hidden = false; p.focus();
 }
-document.querySelectorAll('.filtros button').forEach(b => b.onclick = () => carregar(b.dataset.f));
-carregar('todos');
+carregar();
+
+/* ---------- Menu no celular ---------- */
+const topo = document.querySelector('.topo'), burger = document.querySelector('.burger');
+function menu(aberto){ topo.classList.toggle('aberto', aberto); burger.setAttribute('aria-expanded', aberto); burger.setAttribute('aria-label', aberto ? 'Fechar menu de seções' : 'Abrir menu de seções'); }
+burger.onclick = () => menu(!topo.classList.contains('aberto'));
+document.querySelectorAll('.menu a, .topo [data-ir]').forEach(a => a.addEventListener('click', () => menu(false)));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && topo.classList.contains('aberto')) { menu(false); burger.focus(); } });
+document.addEventListener('click', e => { if (topo.classList.contains('aberto') && !topo.contains(e.target)) menu(false); });
+
+/* Abrir a lista de fontes ao tocar num número de referência */
+document.querySelectorAll('sup a[href^="#f"]').forEach(a => a.addEventListener('click', () => { document.getElementById('fontes-lista').open = true; }));
+
+/* ---------- Abas mama/próstata (carrossel no celular) ---------- */
+document.querySelectorAll('.abas').forEach(abas => {
+  const par = abas.nextElementSibling, bts = [...abas.querySelectorAll('button')], cards = [...par.children];
+  function marca(k){ bts.forEach((b, j) => b.setAttribute('aria-pressed', j === k)); }
+  bts.forEach((b, k) => b.onclick = () => { par.scrollTo({left: cards[k].offsetLeft - cards[0].offsetLeft, behavior: 'smooth'}); marca(k); });
+  par.addEventListener('scroll', () => { const k = Math.round(par.scrollLeft / Math.max(1, cards[1].offsetLeft - cards[0].offsetLeft)); marca(Math.min(k, cards.length - 1)); }, {passive: true});
+});
+
+/* ---------- Seção atual no menu + barra de leitura ---------- */
+const links = [...document.querySelectorAll('.menu a')], alvos = links.map(a => document.querySelector(a.getAttribute('href')));
+const leitura = document.querySelector('.leitura');
+function rolagem(){
+  const y = innerHeight * .35; let atual = -1;
+  if (!inicio.hidden) alvos.forEach((s, k) => { if (s && s.getBoundingClientRect().top <= y) atual = k; });
+  links.forEach((a, k) => k === atual ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current'));
+  const max = document.documentElement.scrollHeight - innerHeight;
+  leitura.style.setProperty('--p', max > 0 ? Math.min(1, scrollY / max).toFixed(4) : 0);
+}
+addEventListener('scroll', () => requestAnimationFrame(rolagem), {passive: true}); rolagem();
+document.querySelectorAll('[data-ir]').forEach(el => el.addEventListener('click', () => setTimeout(rolagem, 30)));
+
+/* ---------- Movimento: entrada em cascata e números que contam ---------- */
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+  document.documentElement.classList.add('fx');
+  const grupos = ['.hero h1 > span', '.hero .lead', '.hero .acoes', '.duo > .tag', '.videos > .video', '.cedo .breve', '.motivos > li',
+    '.wrap > h2', '.wrap > .intro', '.par > *', '.numeros > .numero', '.sp-grid > li', '.habitos > .habito', '.cuidar > li', '.quiz', '.cta', '.regioes > *'];
+  const els = [];
+  grupos.forEach(sel => { const vistos = new Map(); document.querySelectorAll(sel).forEach(el => {
+    const p = el.parentNode, k = vistos.get(p) || 0; vistos.set(p, k + 1);
+    el.classList.add('rv'); el.style.setProperty('--i', Math.min(k, 8)); els.push(el); }); });
+  function conta(el){
+    const txt = el.textContent.trim(), m = txt.match(/^([\d.]+)(%?)$/); if (!m) return;
+    const alvo = parseInt(m[1].replace(/\./g, ''), 10), t0 = performance.now(), dur = 1300;
+    (function passo(t){ const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 4);
+      el.textContent = k < 1 ? Math.round(alvo * e).toLocaleString('pt-BR') + m[2] : txt; if (k < 1) requestAnimationFrame(passo); })(t0);
+  }
+  const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; io.unobserve(e.target);
+    e.target.classList.add('in'); const v = e.target.matches('.numero') && e.target.querySelector('.v'); if (v) conta(v); }), {threshold: .12, rootMargin: '0px 0px -5% 0px'});
+  els.forEach(el => io.observe(el));
+  /* garantia: o que já passou da tela (saltos pelo menu) aparece */
+  addEventListener('scroll', () => els.forEach(el => { if (!el.classList.contains('in') && el.getBoundingClientRect().top < innerHeight && el.getClientRects().length) { el.classList.add('in'); } }), {passive: true});
+  /* ao trocar entre campanha e planos, revela o que estiver visível */
+  document.querySelectorAll('[data-ir]').forEach(el => el.addEventListener('click', () => setTimeout(() => dispatchEvent(new Event('scroll')), 50)));
+}
 </script>
 </body>
 </html>
